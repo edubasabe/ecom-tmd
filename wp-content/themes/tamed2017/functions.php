@@ -62,7 +62,7 @@ function add_theme_scripts() {
   // CSS
   wp_enqueue_style( 'wp-style', get_stylesheet_uri(), array(), '3.7', 'all' );
   wp_enqueue_style( 'frameworks', get_template_directory_uri() . '/assets/css/frameworks.min.css', array(), '1.0', 'all' );
-  wp_enqueue_style( 'custom-gulp-style', get_template_directory_uri() . '/assets/css/styles.css', array('frameworks'), '2.3', 'all' );
+  wp_enqueue_style( 'custom-gulp-style', get_template_directory_uri() . '/assets/css/styles.css', array('frameworks'), '3.1', 'all' );
   // wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/slider.css', array(), '1.1', 'all');
 
   // JS
@@ -159,9 +159,54 @@ add_action('woocommerce_register_form_start', 'wooc_extra_register_fields');
 
 
 // add_action('woocommerce_before_shop_loop', 'texto_prueba');
+add_action('woocommerce_shop_loop', 'texto_3');
+function texto_3() {
+  echo "<h1> TEXTO 3</h1>";
+}
+
 function texto_prueba() {
   echo "<h1> TEXTO DE PRUEBA </h1>";
 }
+
+// add_action('woocommerce_before_shop_loop_item','prueba_2');
+function prueba_2() {
+  echo "PRUEBA 2";
+}
+
+//Acortar titulos de los productos woocommerce_page_title
+add_filter( 'the_title', 'shorten_woo_product_title', 10, 2 );
+function shorten_woo_product_title( $title, $id ) {
+  if ( is_shop() && get_post_type( $id ) === 'product' ) {
+    if ( strlen($title) > 15 ) {
+      return substr( $title, 0, 15 ) . '...';
+    } else {
+      return $title;
+    }
+
+  } else {
+    return $title;
+  }
+}
+
+// add to cart link  esconder en el loop
+add_filter('woocommerce_loop_add_to_cart_link', false);
+// Remove the product rating display on product loops
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+
+
+
+// Productos por página
+add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
+function new_loop_shop_per_page( $cols ) {
+  // $cols contains the current number of products per page based on the value stored on Options -> Reading
+  // Return the number of products you wanna show per page.
+  $cols = 35;
+  return $cols;
+}
+
+
+
+
 
 
 // function email_confirmation_code() {

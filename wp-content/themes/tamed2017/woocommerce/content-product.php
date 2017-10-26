@@ -29,7 +29,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 ?>
 
 
-<div <?php post_class('col-xs-12 col-sm-4 col-md-3 col-lg-3'); ?>>
+
+
+<div <?php post_class('col-xs-6 col-sm-4 col-md-3 col-lg-3'); ?>>
 
 
 	<?php

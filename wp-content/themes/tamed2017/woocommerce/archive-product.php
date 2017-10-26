@@ -15,16 +15,10 @@
  * @package 	WooCommerce/Templates
  * @version     2.0.0
  */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
-remove_header( '' );
-
-
-
- ?>
+get_header( 'shop' ); ?>
 
 	<?php
 		/**
@@ -57,11 +51,7 @@ remove_header( '' );
 
     </header>
 
-
-
 		<?php if ( have_posts() ) : ?>
-
-			<div class="container">
 
 			<?php
 				/**
@@ -94,7 +84,6 @@ remove_header( '' );
 				<?php endwhile; // end of the loop. ?>
 
 			<?php woocommerce_product_loop_end(); ?>
-		</div><!-- .container -->
 
 			<?php
 				/**
@@ -126,6 +115,7 @@ remove_header( '' );
 		 */
 		do_action( 'woocommerce_after_main_content' );
 	?>
+
 	<?php
 		/**
 		 * woocommerce_sidebar hook.
