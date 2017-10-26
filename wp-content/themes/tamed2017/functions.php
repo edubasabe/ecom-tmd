@@ -105,12 +105,12 @@ add_shortcode( 'username', 'show_username' );
 
 
 
-// Integrando woocommerce
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-
-add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+//----- Integrando woocommerce -------------------------------------------------
+// remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+// remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+//
+// add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+// add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
 
 function my_theme_wrapper_start() {
   echo '<section id="main">';
@@ -157,18 +157,33 @@ function wooc_extra_register_fields()
 add_action('woocommerce_register_form_start', 'wooc_extra_register_fields');
 
 
-function email_confirmation_code() {
-  $headers = 'From: admin <noreply@admin>';
-  $to = $_POST['email'];
-  $subject = 'Confirmación de la cuenta';
-  // The unique token can be inserted in the message with %s
-  $message = 'Gracias. Por favor confirma este correo haciendo clic <a href="' . home_url('') . 'token=%s">aquí</a> para activar tu cuenta. Si no puedes acceder al link copia y pega este código en tu navegador %s';
 
-  if ($isAllValid) {
-  	EmailConfirmation::send($to, $subject, $message, $headers);
-  }
+// add_action('woocommerce_before_shop_loop', 'texto_prueba');
+function texto_prueba() {
+  echo "<h1> TEXTO DE PRUEBA </h1>";
 }
-add_action('woocommerce_register_form_start', 'email_confirmation_code');
+
+
+// function email_confirmation_code() {
+//   $headers = 'From: admin <noreply@admin>';
+//   $to = $_POST['email'];
+//   $subject = 'Confirmación de la cuenta';
+//   // The unique token can be inserted in the message with %s
+//   $message = 'Gracias. Por favor confirma este correo haciendo clic <a href="' . home_url('') . 'token=%s">aquí</a> para activar tu cuenta. Si no puedes acceder al link copia y pega este código en tu navegador %s';
+//
+//   if ($isAllValid) {
+//   	EmailConfirmation::send($to, $subject, $message, $headers);
+//   }
+// }
+// add_action('woocommerce_register_form_start', 'email_confirmation_code');
+
+
+
+
+
+
+
+
 
 //add_action( 'woocommerce_review_comment_text', 'woocommerce_review_display_comment_text', 10 );
 

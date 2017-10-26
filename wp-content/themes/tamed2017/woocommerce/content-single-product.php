@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="container">
 	<div class="row">
-	  <?php get_sidebar('buscador'); ?>
+	  <?php //get_sidebar('buscador'); ?>
 	</div>
 	<div class="hidden-xs col-md-3">
 		<?php get_sidebar('ecommerce'); ?>

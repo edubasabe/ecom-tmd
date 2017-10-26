@@ -20,7 +20,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-get_header( 'shop' ); ?>
+remove_header( '' );
+
+
+
+ ?>
 
 	<?php
 		/**
@@ -56,6 +60,7 @@ get_header( 'shop' ); ?>
 
 
 		<?php if ( have_posts() ) : ?>
+
 			<div class="container">
 
 			<?php

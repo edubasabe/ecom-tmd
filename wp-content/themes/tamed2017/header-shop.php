@@ -19,8 +19,8 @@
     <body  <?php body_class(); ?> id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
       <!-- Navigation -->
-      <nav class="navbar navbar-default navbar-fixed-top bg-white" role="navigation" id="nav">
-              <!-- Cambiado -->
+      <nav class="navbar navbar-default navbar-fixed-top bg-white header-shop" role="navigation" id="nav">
+              <h1>Header SHOP</h1>
               <div class="container">
                 <div class="row">
                   <div class="">
