@@ -17,14 +17,53 @@
     <?php wp_head(); ?>
   </head>
     <body  <?php body_class(); ?> id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<style media="screen">
+.navbar-header {
+  position: relative;
+}
+  .comprar-bag {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
+  .comprar-bag form {
+    float: left;
+    padding: 1rem;
+  }
+
+
+  .bag-tamed {
+      display: inline;
+  }
+
+</style>
       <!-- Navigation -->
       <nav class="navbar navbar-default navbar-fixed-top bg-white header-shop" role="navigation" id="nav">
-              <h1>Header SHOP</h1>
               <div class="container">
                 <div class="row">
                   <div class="">
                     <div class="navbar-header">
+                      <div class="comprar-bag hidden-md hidden-lg">
+                        <!-- Comprar -->
+                        <?php
+                        global $product;
+                        $id = $product->get_id();
+
+                        echo '<form class="cart" method="post" enctype="multipart/form-data">'; // classes default button alt
+                        echo '<button type="submit" name="add-to-cart" value="' . $id . '" class="single_add_to_cart_button btn-fibaro btn-sm ">Comprar</button>';
+                        echo '</form>';
+                         ?>
+                        <!-- Fin de Comprar -->
+
+                        <!-- Bag -->
+                        <div class="bag-tamed">
+                          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/bag-icon.svg" alt="Bolsa" />
+                        </div>
+                        <!-- Fin de Bag -->
+
+                      </div>
                       <a class="navbar-brand navbar__logo-text navbar-icon-center" href="<?php echo home_url(); ?>">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/tamed-2017-blanco-sl.svg" alt="TAMED" class="white-logo">
                       </a>
@@ -432,6 +471,10 @@
                               <?php } ?>
                             </li>
                             <li class="level-1"><a class="page-scroll tienda-link" href="<?php echo get_page_link(9); ?>" >Tienda en línea &nbsp;&nbsp;<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/shopping-bag-white.svg" width="20" alt="Cart" class="cart-icon"></a></li>
+                            <li class="level-1"><a href="#">
+
+
+                            </a></li>
 
 
 
