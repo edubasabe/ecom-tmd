@@ -1,0 +1,641 @@
+/*
+Theme Name: TAMED 2017
+Theme URI: https://tuhogarinteligente.cl/
+Author: Edu Basabe
+Author URI: https://edubasabe.com/
+Description: Tema personalizado para TAMED - FIBARO Chile
+Version: 2.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tamed2017
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+/* Barra Logueado */
+.logged-in.admin-bar .bg-white,
+.logged-in.admin-bar .dropdown-menu.dropdown-menu--desktop {
+  margin-top: 32px;
+}
+
+
+/* Imagen BG Video Productos */
+.single-product__video {
+  position: relative;
+}
+
+.img-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Navbar */
+span.titulo {
+  font-weight: 700;
+}
+
+
+/* Agregado CO Sensor al Menú  ::::::::::::::::::::::::::::::::::::::::::::::  */
+.yamm-fullwidth .yamm-content .tab-content .tab-pane .nav-product-tab-list li {
+    width: calc(16.6666% - 3rem) !important;
+}
+
+.yamm-fullwidth .yamm-content .tab-content .tab-pane .nav-product-tab-list li a p {
+    font-size: 1.4rem !important;
+}
+
+/* Text */
+ul li,
+ol li,
+p {
+  font-weight: 300;
+}
+
+.entry-title.page-header,
+.entry-content h3,
+.entry-content h4 {
+  font-weight: 300 !important;
+}
+
+
+
+
+
+/* Titulos Widgets */
+.widgettitle {
+ font-size: 1.8rem;
+ font-weight: 300;
+ border-bottom: thin solid #eee;
+ padding-bottom: 0.8rem;
+}
+
+/* Widget Categorias */
+.product-categories {
+	list-style-type: none;
+	padding-left:0;
+	font-size: 1.4rem;
+}
+
+/* Widget Productos */
+ul.product-categories li {
+    padding: .8rem 0;
+    border-bottom: thin dotted #eee;
+}
+
+ul.product-categories li:last-child {
+  border-bottom: 0;
+}
+
+.product_list_widget li {
+  padding: .8rem 0;
+  border-bottom: thin dotted #eee;
+}
+.product_list_widget li:last-child {
+  border-bottom: 0;
+}
+
+.product_list_widget li a {
+  font-weight: 300 !important;
+  font-size: 1.2rem;
+}
+
+/* Etiqueta de Oferta*/
+.woocommerce span.onsale {
+background-color: #0090ff;
+}
+
+
+/* Boton add to Cart  Secundario */
+.woocommerce a.button {
+	border:1px solid #0090ff;
+	background-color: transparent;
+	font-weight: 300;
+    color: #0090ff;
+    transition: all 500ms ease;
+}
+
+.woocommerce a.button:hover {
+	border:1px solid #0090ff;
+	background-color: #0090ff;
+	font-weight: 300;
+    color: #fff;
+}
+
+
+/* SKU */
+span.sku_wrapper {
+	font-weight: 300;
+}
+
+/* Titulo Producto */
+h1.product_title.entry-title {
+font-weight: 300;
+}
+
+/* Rating */
+.woocommerce-product-rating {
+	color: #ffcc00;
+}
+
+/* Precio Descuento */
+.price del {
+ text-decoration-color: #999;
+}
+
+.price del span.woocommerce-Price-amount.amount {
+ color:#999;
+}
+
+/* Precio Regular */
+.price ins {
+ text-decoration:none;
+ font-weight: 300;
+}
+
+.price ins span.woocommerce-Price-amount.amount {
+  font-weight: 300;
+}
+
+/* Descripcion Corta de producto */
+.woocommerce-product-details__short-description {
+	font-size: 1.4rem;
+}
+
+/* Button Comprar */
+button.single_add_to_cart_button.button.alt {
+	font-weight: 300;
+}
+
+/* Tabs */
+.woocommerce .woocommerce-tabs.wc-tabs-wrapper ul.tabs.wc-tabs::before,
+.woocommerce .woocommerce-tabs.wc-tabs-wrapper ul.tabs.wc-tabs li::before {
+	border:0;
+}
+
+
+
+.woocommerce-Tabs-panel h2,
+.woocommerce-Tabs-panel h3 {
+  font-weight: 300;
+}
+
+/* Tambien te recomendamos */
+.woocommerce .up-sells.upsells.products h2 {
+font-weight: 300;
+}
+
+/* Listas */
+ul li {
+	list-style-image: url('../wp-contet/themes/tamed2017/assets/images/icon/arrow-bullet-list.svg');
+}
+
+
+/* Lista de Productos */
+.woocommerce ul.cart_list li img,
+.woocommerce ul.product_list_widget li img {
+   float: left;
+   width: 60px;
+   margin-left:0;
+   margin-right: 4px;
+}
+
+
+
+
+
+
+
+
+/*  :: WooCommerce :::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.woocommerce h2 {
+  font-weight: 300;
+}
+/* Button Comprar */
+.btn-comprar {
+    background: #0090ff;
+    color: #fff !important;
+}
+
+.btn-comprar:hover {
+    color: #0090ff !important;
+}
+
+/* Esconder Button tienda */
+.btn-tienda {
+ display: none;
+}
+
+
+
+
+/* *********** MI CUENTA **************** */
+
+
+input#account_email {
+    margin-bottom: 30px;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul{
+ list-style-type: square;
+ list-style-type-color: red;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul li{
+border-bottom:1px solid #eee;
+padding: 8px 0;
+}
+
+/* Azules Activos */
+.woocommerce-MyAccount-navigation-link.is-active {
+color:#0090ff;
+}
+.woocommerce-MyAccount-navigation-link.is-active a {
+color:#0090ff;
+}
+/* Grises */
+.woocommerce-MyAccount-navigation-link {
+ color: #ccc;
+}
+.woocommerce-MyAccount-navigation-link a {
+color: #ccc;
+text-decoration: none;
+}
+
+/* Hover */
+.woocommerce-MyAccount-navigation-link a:hover {color: #0090ff;}
+
+.woocommerce-MyAccount-navigation-link li:hover { color: #0090ff;}
+
+
+
+/* ::: Registro de usuario :::: */
+.woocommerce-password-strength {
+  font-weight: 300 !important;
+  font-size: 1.4rem !important;
+  margin-top: 1rem !important;
+  border-radius: 3px !important;
+  border: thin solid !important;
+}
+
+.woocommerce-password-strength.bad {
+  color: #e35b5b !important;
+  background-color: rgba(251, 197, 169, 0.3) !important;
+}
+.woocommerce-password-strength.short {
+  color: #e35b5b !important;
+  background-color: rgba(241, 173, 173, 0.3) !important;
+}
+
+.woocommerce-password-strength.good {
+  color: #ffc733 !important;
+  background-color: rgba(255, 227, 153, 0.3) !important;
+}
+
+.woocommerce-password-strength.strong {
+  color: #83c373 !important;
+  background-color: rgba(193, 225, 185, 0.3) !important;
+}
+
+/* Woocommerce Info*/
+
+.woocommerce-info.woocommerce-message {
+border:1px solid #0090ff;
+border-radius: 4px;
+
+}
+
+.woocommerce-Message {
+	border: 1px solid #0090ff;
+border-radius: 4px;
+}
+
+.woocommerce-info {
+  font-weight:300;
+  background-color: rgba(0, 144, 255, 0.1);
+}
+
+
+/* Woocommerce Messages */
+
+.woocommerce-message {
+	border:1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px 1px rgba(0,0,0, 0.2);
+  font-weight: 300;
+}
+
+.woocommerce-error {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+
+	background: #f1f1f1;
+	box-shadow: 0px 1px 3px rgba(0,0,0, 0.2);
+}
+
+
+
+/* ****** Chekout *********** */
+
+.product-quantity .quantity {
+	display: inline-block;
+}
+
+tr.woocommerce-cart-form__cart-item.cart_item {
+    font-weight: 300;
+}
+
+#post-10 .entry-title.page-header {
+ display:none;
+}
+
+tr.woocommerce-cart-form__cart-item.cart_item td {
+padding-top: 2rem;
+padding-bottom: 1rem;
+}
+
+/* Thumbnail checkout */
+.woocommerce-cart table.cart img{
+  width: 100px;
+}
+
+td.product-thumbnail {
+    text-align: center;
+}
+
+
+table.shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents {
+    /*background: #f1f1f1;*/
+	border-left:0;
+	border-right: 0;
+
+
+}
+
+.woocommerce.cart.button,
+.woocommerce .cart input.button {
+ font-weight: 300;
+ background: transparent;
+ color: #0090ff;
+ border: 1px solid #0090ff;
+}
+
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+min-width: 200px;
+font-weight: 300;
+border-radius: 3px;
+}
+
+.woocommerce table.cart td.actions {
+padding: 2rem;
+}
+
+.woocommerce a.remove {
+	font-size: 1.2rem;
+	color: #0090ff !important;
+	font-weight:300;
+}
+
+.woocommerce a.remove:hover {
+	color: #0090ff !important;
+    background:transparent;
+}
+
+.mensaje-entrega {
+  font-size: 1.2rem;
+	color:#999;
+}
+
+.actualizar-carrito {
+    display: inline;
+    /*float: right;*/
+    position: relative;
+	  color: #0090ff;
+    font-size: 1.2rem;
+}
+
+.actualizar-carrito:hover {
+	background: transparent;
+}
+
+/*span.actualizar-carrito::after {
+    content: '';
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+	background: url('../wp-content/themes/tamed2017/assets/images/icon/icon-refresh.svg') no-repeat center center;
+    display: block;
+    width: 36px;
+    height: 36px;
+}*/
+
+table.shop_table.shop_table_responsive {
+    font-weight: 300;
+}
+
+.contenedor-checkout {
+	background: #fff;
+	box-shadow: 0 0.1rem 1px 0 #d2d2d2;
+	padding: 15px;
+	border-radius: 4px;
+	border:1px solid #ccc;
+}
+
+
+.sku-checkout {
+ font-size:1.2rem;
+}
+
+/* Totals Carrito */
+.cart_totals  h2 {
+  font-weight: 300;
+}
+/* Finalizar Compra Button */
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+	background-color: #0090ff;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover {
+	background-color: transparent;
+	color: #0090ff;
+}
+
+.single-product__content .btn-tienda {
+  display: none;
+}
+
+.woocommerce-cart .cart-collaterals .cart_totals tr th {
+  border-top: #fff;
+  font-weight: 300;
+}
+
+.woocommerce-cart .cart-collaterals .cart_totals tr.order-total td {
+  font-weight: 300;
+  color: #0090ff;
+}
+
+.woocommerce-cart .cart-collaterals .cart_totals table {
+  box-shadow: 0 0.1rem 1px 0 #d2d2d2;
+  border: thin solid #d2d2d2;
+}
+/* Checkout FAQ */
+.checkout-faq--question {
+  border-bottom: thin solid #dedede;
+  padding-bottom: 1rem;
+}
+
+.checkout-faq--answer {
+  text-align: justify;
+  font-size: 1.4rem;
+}
+
+/* Woocommerce Login mi cuenta */
+
+form.woocommerce-form.woocommerce-form-login.login {
+    max-width: 414px;
+    margin: 0 auto;
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+	border-radius: 4px;
+    border: 1px solid #ccc;
+    min-height: 36px;
+}
+
+.woocommerce form .form-row label {
+    line-height: 2;
+    font-weight: 300;
+}
+
+
+/* Recuerdame */
+.woocommerce form .form-row label.inline {
+    display: block;
+}
+
+/* Button */
+.woocommerce #respond input#submit, .woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+border:1px solid #0090ff;
+background: transparent;
+font-weight: 300;
+color: #0090ff;
+transition: all 250ms ease;
+}
+
+.woocommerce input.button:hover {
+color: #fff;
+background: #0090ff;
+}
+
+
+/* Woocommerce Select */
+
+.woocommerce select {
+    -webkit-appearance: none;
+    min-height: 36px;
+    padding: 6px 10px;
+    border: thin solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+    position: relative;
+    background: url('assets/images/icon/arrow-down-list.svg');
+    background-repeat: no-repeat;
+    background-position: 94% 60%;
+    font-weight: 300;
+}
+
+textarea {
+    border-radius: 4px;
+    display: block;
+    border: thin solid #ccc;
+    padding: 6px 12px;
+}
+
+#faq-content-input {
+  width: 100%;
+}
+
+button,
+input[type="submit"],
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    background: transparent;
+    border: thin solid #ccc;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-weight: 300;
+}
+
+label {
+ font-weight: 300;
+}
+
+/* FAQ form */
+
+.faq-form input[type="submit"]{
+  border-color: #0090ff;
+  color: #0090ff;
+}
+
+.faq-form label {
+   font-weight: 300 !important;
+}
+
+fieldset legend {
+  font-weight: 300 !important;
+}
+
+/* Pedido */
+
+ul.woocommerce-order-overview.woocommerce-thankyou-order-details.order_details {
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 3px;
+    border: thin solid #ccc;
+}
+
+
+.woocommerce-bacs-bank-details h2.wc-bacs-bank-details-heading {
+ font-weight:300;
+}
+
+ul.wc-bacs-bank-details.order_details.bacs_details {
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 3px;
+    border: thin solid #ccc;
+}
+
+h2.woocommerce-order-details__title {
+font-weight:300;
+}
+
+.detalle-compra {
+	width: 100%;
+}
+
+.detalle-compra td{
+  text-align:right;
+}
+
+.woocommerce table.shop_table td {
+    font-weight: 300;
+}
+
+.woocommerce table.shop_table td a {
+    text-decoration: none;
+}
+
+
+.woocommerce-customer-details address,
+.woocommerce-columns--addresses h2 {
+    font-weight: 300;
+}
