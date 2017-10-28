@@ -38,6 +38,15 @@
       display: inline;
   }
 
+  #woocommerce-product-search-field-0 {
+    border: thin solid #0090ff;
+    border-radius: 6px;
+    min-height: 36px;
+    font-weight: 300;
+    padding: 5px 10px;
+    font-size: 1.4rem;
+  }
+
   #searchform .form-group {
       position: relative;
   }
@@ -67,6 +76,37 @@
     transform: scale(1.3);
   }
 
+  .scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+    padding: 1rem 0;
+  }
+  .scrollmenu li {
+    display: inline-block;
+    text-decoration: none;
+    /*border: thin solid #0090ff;*/
+    padding: .5rem 1rem;
+    border-bottom: thin solid #dedede;
+    color: #000;
+    transition: all 250ms ease;
+  }
+
+  .scrollmenu li:hover {
+    color: #0090ff;
+    border-bottom-color: #0090ff;
+  }
+
+  .scrollmenu a {
+    text-decoration: none;
+    color: #000;
+    transition: all 250ms ease;
+
+  }
+
+  .scrollmenu a:hover {
+    color: #0090ff;
+  }
+
 
 </style>
       <!-- Navigation -->
@@ -76,17 +116,38 @@
                   <div class="">
                     <div class="navbar-header">
                       <div class="comprar-bag hidden-md hidden-lg">
+                        <!-- Comprar -->
+                        <?php
+                        global $product;
+                        $id = $product->get_id();
+
+                        echo '<form class="cart" method="post" enctype="multipart/form-data">'; // classes default button alt
+                        echo '<button type="submit" name="add-to-cart" value="' . $id . '" class="single_add_to_cart_button btn-fibaro btn-sm ">Comprar</button>';
+                        echo '</form>';
+                         ?>
+                        <!-- Fin de Comprar -->
 
                         <!-- Bag -->
                         <div class="bag-tamed">
-
+                          </a>
                           <?php global $woocommerce;
 
                           if (  $woocommerce->cart->cart_contents_count > 0 ) {
+                            echo '<a href="' . $woocommerce->cart->get_cart_url() . '">';
                             echo '<img src="' . get_template_directory_uri() . '/assets/images/icon/bag-icon-filled.svg" alt="Bolsa" />';
+                            echo '</a>';
                           } else {
                             echo '<img src="' . get_template_directory_uri() . '/assets/images/icon/bag-icon.svg" alt="Bolsa" />';
-                          } ?>
+                          }
+
+
+
+                          /* ?>
+
+<a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
+<?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?>
+</a>
+*/ ?>
 
                         </div>
                         <!-- Fin de Bag -->
@@ -458,7 +519,7 @@
 
                             <li class="level-1"><a class="page-scroll" href="http://soporte.tuhogarinteligente.cl/">Soporte</a></li>
 
-                              <?php/*
+                              <?php
                               $current_user = wp_get_current_user();
                               $icon_login = get_template_directory_uri();
 
@@ -496,14 +557,9 @@
 
                               } else { ?>
                                   <li class="level-1"><a href="<?php echo get_page_link(12); ?>" class="btn-login azul">Login &nbsp;&nbsp;<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon-user-login.svg" alt="User" height="20" width="20" /></a>
-                                  </li>
-                              <?php } */?>
-                            <li class="level-1">
-                              <a class="page-scroll tienda-link" href="<?php echo get_page_link(9); ?>" >Tienda en línea &nbsp;&nbsp; <?php if ( wp_is_mobile() ) {
-                            echo '<img src="' . get_template_directory_uri() . '/assets/images/icon/bag-icon-white.svg" width="20" alt="Cart" class="cart-icon">';
-                          } else {
-                            echo '<img src="' . get_template_directory_uri() . '/assets/images/icon/bag-icon.svg" width="20" alt="Cart" class="cart-icon">';
-                          } ?></a></li>
+                              <?php } ?>
+                            </li>
+                            <li class="level-1"><a class="page-scroll tienda-link" href="<?php echo get_page_link(9); ?>" >Tienda en línea &nbsp;&nbsp;<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/shopping-bag-white.svg" width="20" alt="Cart" class="cart-icon"></a></li>
                             <li class="level-1"><a href="#">
 
 

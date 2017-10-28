@@ -1,7 +1,16 @@
 <?php
-if ( is_shop() || is_product()) {
-      include_once 'header-shop.php';
-} else { ?>
+
+// Si es un Producto de la tienda (Tendrá el Boton de Comprar)
+if ( is_product() ) {
+  include_once 'header-shop-product.php';
+
+}
+
+elseif ( is_shop() || is_cart() || is_checkout() || is_account_page() ) {
+  include_once 'header-shop.php';
+}
+
+else { ?>
 
 
 

@@ -22,15 +22,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 do_action( 'woocommerce_before_account_navigation' );
 ?>
+<style media="screen">
+	.wc-user-nav {
+		float:none;
+		display: inline-block;
+	}
+	.wc-user-nav li {
+		padding-right: 1rem;
+	}
 
-<nav class="woocommerce-MyAccount-navigation">
-	<ul>
-		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
-			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
-				<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
-			</li>
-		<?php endforeach; ?>
-	</ul>
+	.wc-user-nav li:last-child {
+		padding-right: 0;
+	}
+
+	.wc-user-nav .woocommerce-MyAccount-navigation-link--downloads {
+		display: none;
+	}
+
+
+</style>
+<nav class="nav navbar-default" style="overflow:auto;">
+		<ul class="scrollmenu">
+			<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
+				<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
+					<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
 </nav>
 
 <?php do_action( 'woocommerce_after_account_navigation' ); ?>

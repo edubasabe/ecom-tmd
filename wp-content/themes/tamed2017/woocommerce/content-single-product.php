@@ -26,12 +26,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="row">
 	  <?php //get_sidebar('buscador'); ?>
 	</div>
-	<div class="hidden-xs col-md-3">
+	<div class="hidden-xs hidden-sm col-md-3">
 		<?php get_sidebar('ecommerce'); ?>
 	</div>
-
-
-	<div class="col-md-9">
 
 
 
@@ -49,7 +46,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 	return;
 	 }
 ?>
-
+<div class="col-xs-12 col-md-9">
+	
 <div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php

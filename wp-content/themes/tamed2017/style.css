@@ -572,6 +572,7 @@ input[type="email"] {
     border-radius: 4px;
     padding: 6px 12px;
     font-weight: 300;
+    -webkit-appearance: none;
 }
 
 label {

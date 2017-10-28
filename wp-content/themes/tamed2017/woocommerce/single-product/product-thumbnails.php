@@ -22,6 +22,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post, $product;
 
+//Getting Field
+$featured_video = get_field('featured_video', get_the_ID());
+
+// Thumbnail Youtube API
+$featured_video_thumbnail = 'https://img.youtube.com/vi/' . $featured_video . '/default.jpg';
+
 $attachment_ids = $product->get_gallery_image_ids();
 
 if ( $attachment_ids && has_post_thumbnail() ) {
@@ -41,6 +47,33 @@ if ( $attachment_ids && has_post_thumbnail() ) {
 		$html .= wp_get_attachment_image( $attachment_id, 'shop_single', false, $attributes );
  		$html .= '</a></div>';
 
+		// if ($featured_video) {
+		// 	$html .= '<div data-thumb="' . esc_url( $featured_video_thumbnail ) . '" class="woocommerce-product-gallery__image">';
+		// 	$html .= '<img src="' . $featured_video_thumbnail .'"/>'
+		// 	$html .= '</div>';
+		// }
+
+
+
+
 		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $attachment_id );
 	}
 }
+
+
+// Función para agregar videos a los thumbnails de los Productos
+/*
+if ( !function_exists('woocommerce_get_product_video') ) {
+  // add_filter('woocommerce_single_product_image_thumbnail_html', 'woocommerce_get_product_video');
+
+  function woocommerce_get_product_video($html) {
+    $featured_video = get_field('featured_video', get_the_ID());
+
+    if ( !empty(trim($featured_video)) ) {
+      return '<iframe width="640" height="250" src="https://www.youtube.com/embed/' . $featured_video . '" frameborder="0" allowfullscreen></iframe>';
+    } else {
+      return $html;
+    }
+  }
+}
+*/

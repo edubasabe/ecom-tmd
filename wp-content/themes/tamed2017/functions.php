@@ -60,14 +60,14 @@ if ( function_exists('register_sidebar') ) {
 // Registrando CSS y JS
 function add_theme_scripts() {
   // CSS
-  wp_enqueue_style( 'wp-style', get_stylesheet_uri(), array(), '3.7', 'all' );
+  wp_enqueue_style( 'wp-style', get_stylesheet_uri(), array(), '3.8', 'all' );
   wp_enqueue_style( 'frameworks', get_template_directory_uri() . '/assets/css/frameworks.min.css', array(), '1.0', 'all' );
-  wp_enqueue_style( 'custom-gulp-style', get_template_directory_uri() . '/assets/css/styles.css', array('frameworks'), '3.1', 'all' );
+  wp_enqueue_style( 'custom-gulp-style', get_template_directory_uri() . '/assets/css/styles.css', array('frameworks'), '3.3', 'all' );
   // wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/slider.css', array(), '1.1', 'all');
 
   // JS
   wp_enqueue_script('vendors', get_template_directory_uri() . '/assets/js/vendor/vendors.js', array('jquery'), '1.1', true );
-  wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery', 'vendors'), '2.2', true );
+  wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery', 'vendors'), '2.3', true );
   // wp_enqueue_script('menu', get_template_directory_uri() . '/assets/js/menu.js', array('jquery', 'main'), '1.7', true );
   // wp_enqueue_script('carruseles', get_template_directory_uri() . '/assets/js/carruseles.js', array('jquery', 'main'), false, true );
 }
@@ -141,13 +141,13 @@ function wooc_extra_register_fields()
 ?>
 
   <div class="form-group">
-    <label for="account_first_name"><?php _e( 'First name', 'woocommerce' ); ?> <span class="required">*</span></label>
-    <input type="text" class="form-control input-text" name="account_first_name" id="reg_first_name" value="<?php if ( ! empty( $_POST['account_first_name'] ) ) esc_attr_e( $_POST['account_first_name'] ); ?>" />
+    <!-- <label for="account_first_name"><?php _e( 'First name', 'woocommerce' ); ?> <span class="required">*</span></label> -->
+    <input type="text" class="form-control input-text" name="account_first_name" id="reg_first_name" placeholder="<?php _e( 'First name', 'woocommerce' ); ?>"  value="<?php if ( ! empty( $_POST['account_first_name'] ) ) esc_attr_e( $_POST['account_first_name'] ); ?>" />
   </div>
 
   <div class="form-group">
-    <label for="account_last_name"><?php _e( 'Last name', 'woocommerce' ); ?> <span class="required">*</span></label>
-    <input type="text" class="form-control input-text" name="account_last_name" id="reg_last_name" value="<?php if ( ! empty( $_POST['account_last_name'] ) ) esc_attr_e( $_POST['account_last_name'] ); ?>" />
+    <!-- <label for="account_last_name"><?php _e( 'Last name', 'woocommerce' ); ?> <span class="required">*</span></label> -->
+    <input type="text" class="form-control input-text" name="account_last_name" id="reg_last_name" placeholder="<?php _e( 'Last name', 'woocommerce' ); ?>" value="<?php if ( ! empty( $_POST['account_last_name'] ) ) esc_attr_e( $_POST['account_last_name'] ); ?>" />
   </div>
 
   <div class="clear"></div>
@@ -204,38 +204,94 @@ function new_loop_shop_per_page( $cols ) {
   return $cols;
 }
 
+// Breadcrumb Function
+function the_breadcrumb() {
+  echo '<ol class="breadcrumb">';
+  echo "<li>";
+	if (!is_home()) {
+		    echo '<a href="';
+		      echo get_option('home');
+        echo '">';
+	      bloginfo('name');
+		echo "</a>  ";
+    echo "</li>";
 
+		if (is_category() || is_single()) {
+			the_category('title_li=');
+			if (is_single()) {
+				echo "  ";
+				the_title();
+			}
+		} elseif (is_page()) {
+      echo "<li>";
+      echo "<a href='" . get_page_link() . "'> ";
+			echo the_title();
+      echo "</a>  ";
+      echo "</li>";
+      echo "</ol>";
+		}
+	}
+}
 
+// Menu de categorias en el single product
+add_action('woocommerce_before_single_product', 'wc_categorias_productos');
+function wc_categorias_productos() {
+  $taxonomy     = 'product_cat';
+  $orderby      = 'name';
+  $show_count   = 0;      // 1 for yes, 0 for no
+  $pad_counts   = 0;      // 1 for yes, 0 for no
+  $hierarchical = 1;      // 1 for yes, 0 for no
+  $title        = '';
+  $empty        = 0;
 
+  $args = array(
+  			 'taxonomy'     => $taxonomy,
+  			 'orderby'      => $orderby,
+  			 'show_count'   => $show_count,
+  			 'pad_counts'   => $pad_counts,
+  			 'hierarchical' => $hierarchical,
+  			 'title_li'     => $title,
+  			 'hide_empty'   => $empty
+  );
+  $all_categories = get_categories( $args );
+  echo '<ul class="scrollmenu">';
+  foreach ($all_categories as $cat) {
+  	if($cat->category_parent == 0) {
+  			$category_id = $cat->term_id;
 
+  			echo '<li><a href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a></li>';
 
-// function email_confirmation_code() {
-//   $headers = 'From: admin <noreply@admin>';
-//   $to = $_POST['email'];
-//   $subject = 'Confirmación de la cuenta';
-//   // The unique token can be inserted in the message with %s
-//   $message = 'Gracias. Por favor confirma este correo haciendo clic <a href="' . home_url('') . 'token=%s">aquí</a> para activar tu cuenta. Si no puedes acceder al link copia y pega este código en tu navegador %s';
-//
-//   if ($isAllValid) {
-//   	EmailConfirmation::send($to, $subject, $message, $headers);
-//   }
-// }
-// add_action('woocommerce_register_form_start', 'email_confirmation_code');
+  			$args2 = array(
+  							'taxonomy'     => $taxonomy,
+  							'child_of'     => 0,
+  							'parent'       => $category_id,
+  							'orderby'      => $orderby,
+  							'show_count'   => $show_count,
+  							'pad_counts'   => $pad_counts,
+  							'hierarchical' => $hierarchical,
+  							'title_li'     => $title,
+  							'hide_empty'   => $empty
+  			);
+  			$sub_cats = get_categories( $args2 );
+  			if($sub_cats) {
+  					foreach($sub_cats as $sub_category) {
+  							echo  $sub_category->name ;
+  					}
+  			}
+  	}
+  }
+  echo "</ul>";
+}
 
+// Añadiendo BS Classes a los resultados
+add_action('woocommerce_before_main_content','archive_bs_header');
+function archive_bs_header() {
+  echo '<div class="container">
+        <div class="row">
+        <div class="col-xs-12">';
+}
 
-
-
-
-
-
-
-
-//add_action( 'woocommerce_review_comment_text', 'woocommerce_review_display_comment_text', 10 );
-
-// add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
-// function woo_remove_product_tabs( $tabs ) {
-//     unset( $tabs['reviews'] );  // Removes the reviews tab
-//     unset( $tabs['additional_information'] );  // Removes the additional information tab
-//     return $tabs;
-// }
-// add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 );
+add_action('woocommerce_after_main_content','archive_bs_footer');
+function archive_bs_footer() {
+  echo "</div><!-- col --></div><!-- row --></div><!-- container -->";
+}
