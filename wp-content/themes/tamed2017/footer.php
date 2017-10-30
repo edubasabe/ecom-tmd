@@ -90,7 +90,7 @@
             <div class="col-xs-12">
               <img src="<?php bloginfo(stylesheet_directory); ?>/assets/images/logo/tamed-2017-gris-sl.svg" alt="Tamed" class="img-responsive footer__copyright--img">
               <span class="footer__copyright text-center center-block">© 2017. TAMED<sup>®</sup>  SpA. Todos los derechos reservados.<br>
-                Distribuidor Oficial de FIBARO<sup>®</sup>  en Chile y Perú.</span>
+                Distribuidor Oficial de FIBARO<sup>®</sup> para Latinoamérica.</span>
             </div>
           </div>
         </div>

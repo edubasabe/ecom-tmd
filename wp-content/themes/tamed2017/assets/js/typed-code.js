@@ -2,8 +2,9 @@ jQuery(document).ready(function($) {
 
   //-- palabras
   var typed = new Typed('#type-word', {
-  strings: ["calefacción", "cámara", "iluminación", "seguridad", "dispositivo", "termostato", "casa"],
-  typeSpeed: 50,
+  strings: ["calefacción", "cámara", "iluminación", "seguridad", "dispositivo", "termostato", "hogar"],
+  typeSpeed: 10,
+  backSpeed: 10,
   fadeOut:true,
   loop: false,
   onComplete: function () {

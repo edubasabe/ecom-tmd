@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 }
 ?>
 <div class="col-xs-12 col-md-9">
-	
+
 <div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php
@@ -93,7 +93,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 </div><!-- #product-<?php the_ID(); ?> -->
 		<p class="text-center">
-			<a href="#" class="btn btn-md"><i class="fa fa-arrow-left">&nbsp;</i>Volver a la Tienda</a>
+			<a href="#" class="btn btn-md btn-outline-azul btn-block">Volver a la Tienda</a>
 		</p>
 	</div><!-- Fin de col-md-9 -->
 </div>

@@ -101,6 +101,22 @@
              </div>
            </div>
 
+           <!-- Modular -->
+           <div class="item">
+             <div class="text-center">
+               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon-modularity.svg" class="img-responsive center-block">
+               <h3>Modular</h3>
+             </div>
+           </div>
+
+           <!-- Ecoeficiente -->
+           <div class="item">
+             <div class="text-center">
+               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon-ecosystem.svg" class="img-responsive center-block">
+               <h3>Ecoeficiente</h3>
+             </div>
+           </div>
+
          </div>
 
        </div>
@@ -193,7 +209,7 @@
          </div>
          <br>
          <p class="btn-container text-center center-block">
-           <a href="https://tuhogarinteligente.cl/comprar" class="btn btn-outline-azul">Tienda en línea</a></p>
+           <a href="https://tuhogarinteligente.cl/comprar" class="btn btn-fibaro">Tienda en línea</a></p>
        </div>
        <div class="col-xs-6">
          <div class="icon" style="min-height: 8rem; padding: 2.95rem;">
@@ -201,7 +217,7 @@
            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/support-icon.png" width="50" alt="Support" class="img-responsive center-block">
          </div>
          <p class="btn-container text-center center-block">
-           <a href="tel:+56228486547" class="btn btn-outline-azul" id="consulta-experto">Consulta un experto</a>
+           <a href="tel:+56228486547" class="btn btn-fibaro" id="consulta-experto">Consulta un experto</a>
            <!-- <a href="https://soporte.tuhogarinteligente.cl/" class="btn btn-block btn-lg btn-fibaro">Nuestros Servicios</a> -->
          </p>
        </div>
@@ -214,7 +230,25 @@
 
 <!-- Aquí estaba la seccion experience center -->
 
- <section>
+ <section class="inicio-tuhogar__experience-center" id="experience-center">
+   <div class="container">
+     <div class="row">
+        <div class="col-xs-12 page-section--small">
+          <div class="text-center">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/frase.svg" style="max-height:2rem;"  height="20" alt="Ven a conocer nuestro" class="img-responsive center-block" />
+            <h2 class="headline headline--nomargin inicio-tuhogar__experience-center__title">Experience Center</h2>
+          </div>
+          <p class="inicio-tuhogar__experience-center__horario text-center">Lunes a Viernes: 9:00 – 19:00 hrs. | Sábado: 10:00 – 19:00 hrs.</p>
+        </div>
+     </div>
+   </div>
+
+   <div class="container-fluid">
+     <div class="row">
+       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/background/experience-center.jpg" alt="Experience Center" class="img-responsive ">
+     </div>
+   </div>
+
    <div class="container">
      <div class="row">
        <div class="col-md-12">
@@ -229,20 +263,22 @@
    </div>
  </section>
 
+
+
  <section class="visitanos">
    <div class="container">
      <div class="row">
        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
          <table class="table" border="0" align="center" style="margin-bottom:0;">
            <tr>
-             <td valign="middle" style="vertical-align:middle; border-top: 0;"><p class="lead link link--arrow-black text-center" style="margin:0;">Llévame aquí</p></td>
+             <td valign="middle" style="vertical-align:middle; border-top: 0;"><p class="lead link--arrow-black text-center" style="margin:0;">Llévame aquí</p></td>
              <td style="border-top: 0;">
-               <a href="https://www.waze.com/es-419/livemap?zoom=17&lat=-33.38677&lon=-70.53826" class="" id="waze-link">
+               <a href="https://www.waze.com/es-419/livemap?zoom=17&lat=-33.38677&lon=-70.53826" class="" id="waze-link" target="_blank">
                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon_waze.png" alt="Ir con Google Maps"  width="60" class="img-responsive center-block" style="padding-top:1rem;">
                </a>
              </td>
              <td style="border-top: 0;">
-               <a href="https://www.google.cl/maps/place/Fibaro+Experience+Center/@-33.3869005,-70.5405292,17z/data=!3m1!4b1!4m5!3m4!1s0x9662cead7de2de31:0x2795ef3a9c5fe7d9!8m2!3d-33.3869005!4d-70.5383405" class="" id="maps-link">
+               <a href="https://www.google.cl/maps/place/Fibaro+Experience+Center/@-33.3869005,-70.5405292,17z/data=!3m1!4b1!4m5!3m4!1s0x9662cead7de2de31:0x2795ef3a9c5fe7d9!8m2!3d-33.3869005!4d-70.5383405" class="" id="maps-link" target="_blank">
                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon_maps.png" alt="Ir con Waze" width="60" class="img-responsive center-block">
                </a>
              </td>
@@ -255,7 +291,7 @@
  <hr class="divider">
 
  <!-- Proyectos Inmobiliarios -->
- <section class="page-section inicio-tuhogar--proyectos" id="proyectos">
+ <section class="inicio-tuhogar--proyectos" id="proyectos">
    <div class="container">
      <div class="row">
        <div class="col-xs-12 col-sm-8 col-sm-offset-2">

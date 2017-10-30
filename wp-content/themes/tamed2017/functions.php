@@ -62,12 +62,12 @@ function add_theme_scripts() {
   // CSS
   wp_enqueue_style( 'wp-style', get_stylesheet_uri(), array(), '3.8', 'all' );
   wp_enqueue_style( 'frameworks', get_template_directory_uri() . '/assets/css/frameworks.min.css', array(), '1.0', 'all' );
-  wp_enqueue_style( 'custom-gulp-style', get_template_directory_uri() . '/assets/css/styles.css', array('frameworks'), '3.3', 'all' );
+  wp_enqueue_style( 'custom-gulp-style', get_template_directory_uri() . '/assets/css/styles.css', array('frameworks'), '4.2', 'all' );
   // wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/slider.css', array(), '1.1', 'all');
 
   // JS
   wp_enqueue_script('vendors', get_template_directory_uri() . '/assets/js/vendor/vendors.js', array('jquery'), '1.1', true );
-  wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery', 'vendors'), '2.3', true );
+  wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery', 'vendors'), '3.0', true );
   // wp_enqueue_script('menu', get_template_directory_uri() . '/assets/js/menu.js', array('jquery', 'main'), '1.7', true );
   // wp_enqueue_script('carruseles', get_template_directory_uri() . '/assets/js/carruseles.js', array('jquery', 'main'), false, true );
 }
@@ -78,7 +78,7 @@ function typed_compatibilidad() {
   $page_selected = 'compatibilidad';
   if ( is_page($page_selected) ) {
     wp_enqueue_script('typed', get_template_directory_uri() . '/assets/js/vendor/typed.min.js', array('jquery'), '1.1', true );
-    wp_enqueue_script('typed-code', get_template_directory_uri() . '/assets/js/typed-code.js', array('jquery'), '1.3', true );
+    wp_enqueue_script('typed-code', get_template_directory_uri() . '/assets/js/typed-code.js', array('jquery'), '1.7', true );
   }
 } add_action('wp_enqueue_scripts', 'typed_compatibilidad');
 
@@ -295,3 +295,22 @@ add_action('woocommerce_after_main_content','archive_bs_footer');
 function archive_bs_footer() {
   echo "</div><!-- col --></div><!-- row --></div><!-- container -->";
 }
+
+// Detectar Browser
+if (isset($_SERVER['HTTP_USER_AGENT'])) {
+    $agent = $_SERVER['HTTP_USER_AGENT'];
+}
+
+// Detectar si el browser es Firefox
+function isFirefox() {
+  if (strlen(strstr($agent, 'Firefox')) > 0) {
+      $browser = 'firefox';
+  }
+  return $browser;
+}
+
+
+
+// Moviendo el titulo
+
+add_action('woocommerce_before_single_product_summary','woocommerce_template_single_title', 5);

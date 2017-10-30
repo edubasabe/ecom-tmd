@@ -25,7 +25,7 @@ global $post, $product;
 ?>
 <?php if ( $product->is_on_sale() ) : ?>
 
-	<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?>
+	<?php echo apply_filters( 'woocommerce_sale_flash', '<p class="text-center" id="onsale"><span class="btn btn-xs btn-outline-rojo">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span></p>', $post, $product ); ?>
 
 <?php endif;
 

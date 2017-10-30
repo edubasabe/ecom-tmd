@@ -44,7 +44,7 @@
          <div class="item">
            <a href="#">
                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon-home.svg"  class="img-responsive compatibilidad__hero__image center-block">
-               <p class="compatibilidad__hero__text">Casa</p>
+               <p class="compatibilidad__hero__text">Hogar</p>
            </a>
          </div>
        </div>
@@ -160,7 +160,7 @@
          <div class="row hidden-xs hidden-sm ">
            <div class="col-sm-4">
              <div class="thumbnail center-block">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/dev-dlink.jpg" alt="Philips" class="img-responsive" />
+               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/dev-philips.jpg" alt="Philips" class="img-responsive" />
                <div class="caption">
                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/philips-logo.png" alt="Philips" class="img-responsive center-block" />
                  <p class="text-center">Controla, automatiza y monitorea tus luces desde cualquier parte.</p>

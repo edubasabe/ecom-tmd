@@ -406,8 +406,8 @@ else { ?>
                               </li>
 
                               <li class="level-1"><a class="page-scroll" href="http://soporte.tuhogarinteligente.cl/">Soporte</a></li>
-
-                                <?php
+                              <li class="level-1"><a class="page-scroll" href="<?php echo get_page_link(7); ?>">Contacto</a></li>
+                                <?php /*
                                 $current_user = wp_get_current_user();
                                 $icon_login = get_template_directory_uri();
 
@@ -445,8 +445,8 @@ else { ?>
 
                                 } else { ?>
                                     <li class="level-1"><a href="<?php echo get_page_link(12); ?>" class="btn-login azul">Login &nbsp;&nbsp;<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon-user-login.svg" alt="User" height="20" width="20" /></a>
-                                <?php } ?>
-                              </li>
+                                    </li>
+                                <?php } */?>
                               <li class="level-1"><a class="page-scroll tienda-link" href="<?php echo get_page_link(9); ?>" >Tienda en línea &nbsp;&nbsp;<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/shopping-bag-white.svg" width="20" alt="Cart" class="cart-icon"></a></li>
 
 
