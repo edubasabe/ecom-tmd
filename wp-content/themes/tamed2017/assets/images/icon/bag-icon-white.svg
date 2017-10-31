@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="GLYPHS" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="17px" height="48px" viewBox="0 0 17 48" style="enable-background:new 0 0 17 48;" xml:space="preserve">
+	 viewBox="0 0 17 21" style="enable-background:new 0 0 17 21;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;}
+</style>
 <g id="MSP_Bag_Empty_3_">
 	<g id="MSP_Bag_Empty_1_">
-		<path style="fill:#FFFFFF;" d="M1.5,16C0.67,16,0,16.67,0,17.5v14C0,32.33,0.67,33,1.5,33h14c0.83,0,1.5-0.67,1.5-1.5v-14
-			c0-0.83-0.67-1.5-1.5-1.5H1.5z M16,31.5c0,0.28-0.22,0.5-0.5,0.5h-14C1.22,32,1,31.78,1,31.5v-14C1,17.22,1.22,17,1.5,17h14
-			c0.28,0,0.5,0.22,0.5,0.5V31.5z"/>
+		<path class="st0" d="M1.5,3.5C0.7,3.5,0,4.2,0,5v14c0,0.8,0.7,1.5,1.5,1.5h14c0.8,0,1.5-0.7,1.5-1.5V5c0-0.8-0.7-1.5-1.5-1.5H1.5z
+			 M16,19c0,0.3-0.2,0.5-0.5,0.5h-14C1.2,19.5,1,19.3,1,19V5c0-0.3,0.2-0.5,0.5-0.5h14C15.8,4.5,16,4.7,16,5V19z"/>
 	</g>
 	<g>
-		<path style="fill:#FFFFFF;" d="M12.79,17H4.21v-0.5c0-2.47,2.23-4,4.29-4s4.29,1.53,4.29,4V17z M5.25,16h6.5
-			c-0.28-1.56-1.81-2.5-3.25-2.5S5.53,14.44,5.25,16z"/>
+		<path class="st0" d="M12.8,4.5H4.2V4c0-2.5,2.2-4,4.3-4s4.3,1.5,4.3,4V4.5z M5.2,3.5h6.5C11.5,1.9,9.9,1,8.5,1S5.5,1.9,5.2,3.5z"
+			/>
 	</g>
 </g>
 </svg>

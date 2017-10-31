@@ -39,7 +39,7 @@ $form = '<form role="search" method="get" id="searchform" action="' . esc_url( h
 	<div>
 		<label class="screen-reader-text" for="s">' . __( 'Search for:', 'woocommerce' ) . '</label>
 		<div class="form-group">
-			 <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . __( 'Buscar productos', 'woocommerce' ) . '" class="form-control" style="-webkit-appearance: none;" />
+			 <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . __( 'Buscar productos', 'woocommerce' ) . '" class="form-control" style="-webkit-appearance: none; padding-right: 38px;" />
 			 <button type="submit" id="searchsubmit" value="'. esc_attr__( 'Search', 'woocommerce' ) .'" class="btn btn-outline-azul"><i class="fa fa-search"></i></button>
 		</div>
 		<input type="hidden" name="post_type" value="product" />

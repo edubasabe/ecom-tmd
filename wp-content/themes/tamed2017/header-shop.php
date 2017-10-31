@@ -18,7 +18,7 @@
   </head>
     <body  <?php body_class(); ?> id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <style media="screen">
-.navbar-header {
+/*.navbar-header {
   position: relative;
 }
   .comprar-bag {
@@ -66,7 +66,7 @@
     min-height: 34px;
     transform: scale(1.3);
   }
-
+*/
 
 </style>
       <!-- Navigation -->
@@ -516,16 +516,16 @@
                     </div>
                   </div>
                 </div>
-                <!-- Form de busqueda -->
-                <div class="row sub-nav-mobile">
-                  <div class="col-xs-12">
-                    <div class="col-xs-10">
-                      <?php get_product_search_form(); ?>
-                    </div>
-                    <div class="col-xs-2 text-center" style="">
-                      <a href="<?php echo get_page_link(12); ?>" class="btn-login azul"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon-user-login.svg" alt="User" height="20" width="20" /></a>
+
+                <?php if (wp_is_mobile() ) { ?>
+                  <!-- Form de busqueda -->
+                  <div class="row sub-nav-mobile">
+                    <div class="col-xs-12">
+                        <?php get_product_search_form(); ?>
+                        <a href="<?php echo get_page_link(12); ?>" class="btn-login azul login-btn" ><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon-user-login.svg" alt="User" height="20" width="20" /></a>
                     </div>
                   </div>
-                </div>
+                <?php } ?>
+
               </div>
             </nav>

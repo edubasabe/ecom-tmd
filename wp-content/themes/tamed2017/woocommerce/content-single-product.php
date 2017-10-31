@@ -51,6 +51,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php
+	if ( wp_is_mobile() ) {
+		add_action('woocommerce_before_single_product_summary','woocommerce_template_single_title', 5);
+	}
 		/**
 		 * woocommerce_before_single_product_summary hook.
 		 *
@@ -63,6 +66,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="summary entry-summary">
 
 		<?php
+
+		if ( wp_is_mobile() ) {
+			remove_action('woocommerce_single_product_summary','woocommerce_template_single_title', 5);
+		}
 			/**
 			 * woocommerce_single_product_summary hook.
 			 *

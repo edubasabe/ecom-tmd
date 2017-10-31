@@ -32,15 +32,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="container" id="customer_login">
 	<div class="row">
-		<div class="col-xs-12 col-md-4 col-md-offset-4">
-			<ul class="nav nav-tabs nav-justified">
-			  <li role="presentation" class="active"><a href="#registro" data-toggle="tab">Registrarse</a></li>
-			  <li role="presentation"><a href="#login" data-toggle="tab">Inicia Sesión</a></li>
-			</ul>
-		</div>
-	</div>
-
-	<div class="row">
 
 
 
@@ -48,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="col-xs-12">
 
-		<div class="tab-content">
+
 
 
 			<!-- Login -->
@@ -93,10 +84,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div><!-- fin del row -->
 
 			</div><!-- Fin del login -->
-
+			<legend>
+				<fieldset>
+					¿Nuevo en TAMED?
+				</fieldset>
+			</legend>
+			<button data-toggle="collapse" data-target="#registro" class="btn btn-fibaro btn-block">Crear una cuenta</button>
 
 			<!-- Registro -->
-			<div id="registro" class="tab-pane active">
+			<div id="registro" class="collapse">
 
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4">
@@ -159,7 +155,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			</div><!-- Fin del registro -->
 
-		</div>
+
 
 
 
