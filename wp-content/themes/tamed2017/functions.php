@@ -62,7 +62,7 @@ function add_theme_scripts() {
   // CSS
   wp_enqueue_style( 'wp-style', get_stylesheet_uri(), array(), '3.8', 'all' );
   wp_enqueue_style( 'frameworks', get_template_directory_uri() . '/assets/css/frameworks.min.css', array(), '1.0', 'all' );
-  wp_enqueue_style( 'custom-gulp-style', get_template_directory_uri() . '/assets/css/styles.css', array('frameworks'), '4.5', 'all' );
+  wp_enqueue_style( 'custom-gulp-style', get_template_directory_uri() . '/assets/css/styles.css', array('frameworks'), '4.7.8', 'all' );
   // wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/slider.css', array(), '1.1', 'all');
 
   // JS
@@ -191,8 +191,8 @@ function prueba_2() {
 add_filter( 'the_title', 'shorten_woo_product_title', 10, 2 );
 function shorten_woo_product_title( $title, $id ) {
   if ( is_shop() && get_post_type( $id ) === 'product' ) {
-    if ( strlen($title) > 15 ) {
-      return substr( $title, 0, 15 ) . '...';
+    if ( strlen($title) > 22 ) {
+      return substr( $title, 0, 22 ) . '...';
     } else {
       return $title;
     }
@@ -248,7 +248,7 @@ function the_breadcrumb() {
 }
 
 // Menu de categorias en el single product
-add_action('woocommerce_before_single_product', 'wc_categorias_productos');
+//add_action('woocommerce_before_single_product', 'wc_categorias_productos');
 function wc_categorias_productos() {
   $taxonomy     = 'product_cat';
   $orderby      = 'name';
@@ -296,6 +296,28 @@ function wc_categorias_productos() {
   }
   echo "</ul>";
 }
+
+
+
+//Agregar Buscador y cuenta antes del single product
+// add_action('woocommerce_before_single_product', 'buscador_cuenta');
+// add_action('woocommerce_before_main_content', 'buscador_cuenta');
+function buscador_cuenta() {
+  //return get_product_search_form();
+  // echo "Hola";
+  echo '<!-- Form de busqueda -->
+  <div class="row sub-nav-mobile">
+    <div class="col-xs-12">
+      <div class="col-xs-10">'
+        . get_product_search_form() .
+      '</div>
+      <div class="col-xs-2 text-center" style="">
+        <a href="' . get_page_link(12) . '" class="btn-login azul"><img src="'. get_template_directory_uri() . '/assets/images/icon/icon-user-login.svg" alt="User" height="20" width="20" /></a>
+      </div>
+    </div>
+  </div>';
+}
+
 
 // Añadiendo BS Classes a los resultados
 add_action('woocommerce_before_main_content','archive_bs_header');

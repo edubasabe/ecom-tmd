@@ -56,7 +56,7 @@
     top: 0;
     right: 0;
     border-radius: 0 4px 4px 0px;
-    background-color: white;
+    background-color: transparent;
   }
 
   .sub-nav-mobile {
@@ -569,17 +569,6 @@
 
 
                         </ul>
-                    </div>
-                  </div>
-                </div>
-                <!-- Form de busqueda -->
-                <div class="row sub-nav-mobile">
-                  <div class="col-xs-12">
-                    <div class="col-xs-10">
-                      <?php get_product_search_form(); ?>
-                    </div>
-                    <div class="col-xs-2 text-center" style="">
-                      <a href="<?php echo get_page_link(12); ?>" class="btn-login azul"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon-user-login.svg" alt="User" height="20" width="20" /></a>
                     </div>
                   </div>
                 </div>
