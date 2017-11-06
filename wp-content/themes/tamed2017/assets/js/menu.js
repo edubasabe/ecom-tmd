@@ -51,8 +51,10 @@ $('li.dropdown > a').on('click', function (event) {
   $(this).parent().siblings().children('ul').removeClass('collapsed').addClass('collapse');
 });
 
-
-
+/* Al darle click a Mira los productos desplegar el menú */
+$('#mira-los-productos').on('click', function () {
+  $('#productos').click();
+});
 
 /* Guardar el menu si el usuario hace click fuera */
 $('body').on('click', function (e) {

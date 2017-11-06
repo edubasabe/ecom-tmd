@@ -203,6 +203,17 @@ ul li {
    margin-right: 4px;
 }
 
+/* Esconder reviews */
+#reviews {
+  display: none;
+}
+
+
+/* Esconder Preguntas del productos */
+.woocommerce-Tabs-panel--faqs {
+  display: none;
+}
+
 
 
 

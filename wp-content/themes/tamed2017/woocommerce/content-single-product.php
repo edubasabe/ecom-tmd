@@ -24,16 +24,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="container">
 	<div class="row">
-	  <?php //get_sidebar('buscador'); ?>
-	</div>
+
+	<!-- Sidebar -->
 	<div class="hidden-xs hidden-sm col-md-3">
-		<?php get_sidebar('ecommerce'); ?>
-	</div>
 
-
-
-
-<?php
+	<?php
 	/**
 	 * woocommerce_before_single_product hook.
 	 *
@@ -46,9 +41,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 	return;
 	 }
 ?>
-<div class="col-xs-12 col-md-9">
+</div>
 
-<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div class="col-xs-12 col-sm-12 col-md-9">
+	<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php
 	if ( wp_is_mobile() ) {
@@ -99,8 +95,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	?>
 
 </div><!-- #product-<?php the_ID(); ?> -->
+	</div><!-- Fin de col-md-9 -->
+</div><!-- row -->
+<div class="row hidden-md hidden-lg">
+	<div class="col-md-4 col-md-offset-4">
 		<p class="text-center">
 			<a href="#" class="btn btn-md btn-outline-azul btn-block">Volver a la Tienda</a>
 		</p>
-	</div><!-- Fin de col-md-9 -->
+	</div>
 </div>
+
+</div><!-- container -->

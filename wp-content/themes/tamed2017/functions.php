@@ -60,14 +60,14 @@ if ( function_exists('register_sidebar') ) {
 // Registrando CSS y JS
 function add_theme_scripts() {
   // CSS
-  wp_enqueue_style( 'wp-style', get_stylesheet_uri(), array(), '3.8', 'all' );
+  wp_enqueue_style( 'wp-style', get_stylesheet_uri(), array(), '3.9.2', 'all' );
   wp_enqueue_style( 'frameworks', get_template_directory_uri() . '/assets/css/frameworks.min.css', array(), '1.0', 'all' );
-  wp_enqueue_style( 'custom-gulp-style', get_template_directory_uri() . '/assets/css/styles.css', array('frameworks'), '4.7.8', 'all' );
+  wp_enqueue_style( 'custom-gulp-style', get_template_directory_uri() . '/assets/css/styles.css', array('frameworks'), '4.8.5', 'all' );
   // wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/slider.css', array(), '1.1', 'all');
 
   // JS
   wp_enqueue_script('vendors', get_template_directory_uri() . '/assets/js/vendor/vendors.js', array('jquery'), '1.1', true );
-  wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery', 'vendors'), '3.1', true );
+  wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery', 'vendors'), '3.1.3', true );
   // wp_enqueue_script('menu', get_template_directory_uri() . '/assets/js/menu.js', array('jquery', 'main'), '1.7', true );
   // wp_enqueue_script('carruseles', get_template_directory_uri() . '/assets/js/carruseles.js', array('jquery', 'main'), false, true );
 }
@@ -172,21 +172,6 @@ function text_domain_woo_save_reg_form_fields($customer_id) {
 
 add_action('woocommerce_created_customer', 'text_domain_woo_save_reg_form_fields');
 
-// add_action('woocommerce_before_shop_loop', 'texto_prueba');
-add_action('woocommerce_shop_loop', 'texto_3');
-function texto_3() {
-  echo "<h1> TEXTO 3</h1>";
-}
-
-function texto_prueba() {
-  echo "<h1> TEXTO DE PRUEBA </h1>";
-}
-
-// add_action('woocommerce_before_shop_loop_item','prueba_2');
-function prueba_2() {
-  echo "PRUEBA 2";
-}
-
 //Acortar titulos de los productos woocommerce_page_title
 add_filter( 'the_title', 'shorten_woo_product_title', 10, 2 );
 function shorten_woo_product_title( $title, $id ) {
@@ -214,7 +199,7 @@ add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
 function new_loop_shop_per_page( $cols ) {
   // $cols contains the current number of products per page based on the value stored on Options -> Reading
   // Return the number of products you wanna show per page.
-  $cols = 35;
+  $cols = 40;
   return $cols;
 }
 
@@ -356,7 +341,9 @@ add_action('woocommerce_before_shop_loop_item_title','woocommerce_show_product_l
 
 //Mover oferta antes del titulo en el single product
 remove_action('woocommerce_before_single_product_summary','woocommerce_show_product_sale_flash', 10);
-add_action('woocommerce_before_single_product','woocommerce_show_product_sale_flash', 15);
+// add_action('woocommerce_before_single_product','woocommerce_show_product_sale_flash', 15);
+add_action('woocommerce_before_single_product_summary','woocommerce_show_product_sale_flash', 15);
+
 
 
 
@@ -386,3 +373,33 @@ function adding_buscador() {
     </div>';
   }
 }
+
+//
+
+add_action('woocommerce_before_shop_loop_item_title', 'taggear_producto');
+function taggear_producto(){
+  if ( has_term('homekit', 'product_tag') ) {
+    echo "<p><span class='btn btn-xs btn-outline-rojo'>Homekit</span></p>";
+  }
+}
+
+
+// Usuarios loggeados para poder ver los productos
+function woocommerce_user_logged()
+{
+
+
+    if ( !is_user_logged_in() && is_woocommerce() || is_product() || is_shop() )
+    {
+
+          wp_redirect( site_url('mi-cuenta/'));
+          exit;
+    }
+}
+add_action('init', 'woocommerce_user_logged');
+
+
+function add_sidebar_wc() {
+  return get_sidebar('ecommerce');
+}
+add_action('woocommerce_before_single_product', 'add_sidebar_wc');

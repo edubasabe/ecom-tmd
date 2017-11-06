@@ -18,6 +18,10 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+
+
+
+
 get_header( 'shop' ); ?>
 
 	<?php
@@ -52,7 +56,13 @@ get_header( 'shop' ); ?>
 
     </header>
 
+		<?php
 
+		// if ( !is_user_logged_in() ) {
+		// 	auth_redirect();
+		// }
+
+		?>
 
 
 		<?php if ( have_posts() ) : ?>

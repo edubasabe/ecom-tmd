@@ -49,10 +49,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="col-md-4 col-md-offset-4">
 			<?php endif; ?>
 
-					<h2><?php _e( 'Login', 'woocommerce' ); ?></h2>
+
 
 					<form class="woocommerce-form woocommerce-form-login login" method="post">
-
+						<h2 style="margin-top:0;"><?php _e( 'Login', 'woocommerce' ); ?></h2>
+						
 						<?php do_action( 'woocommerce_login_form_start' ); ?>
 
 						<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
@@ -84,12 +85,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div><!-- fin del row -->
 
 			</div><!-- Fin del login -->
-			<legend>
-				<fieldset>
-					¿Nuevo en TAMED?
-				</fieldset>
-			</legend>
-			<button data-toggle="collapse" data-target="#registro" class="btn btn-fibaro btn-block">Crear una cuenta</button>
+
+
+			<!-- Nuevo en TAMED -->
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<h4 class="text-center">¿Nuevo en TAMED?</h4>
+					<button data-toggle="collapse" data-target="#registro" class="btn btn-fibaro btn-block">Crear una cuenta</button>
+				</div>
+			</div>
+
 
 			<!-- Registro -->
 			<div id="registro" class="collapse">
@@ -104,10 +109,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 
-						<h2><?php _e( 'Register', 'woocommerce' ); ?></h2>
+
 
 						<form method="post" class="register">
-
+							<h2 style="margin-top:0;"><?php _e( 'Register', 'woocommerce' ); ?></h2>
+							<br>
 
 
 

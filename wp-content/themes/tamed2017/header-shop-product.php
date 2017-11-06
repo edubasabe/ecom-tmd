@@ -560,14 +560,6 @@
                               <?php } ?>
                             </li>
                             <li class="level-1"><a class="page-scroll tienda-link" href="<?php echo get_page_link(9); ?>" >Tienda en línea &nbsp;&nbsp;<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/shopping-bag-white.svg" width="20" alt="Cart" class="cart-icon"></a></li>
-                            <li class="level-1"><a href="#">
-
-
-                            </a></li>
-
-
-
-
                         </ul>
                     </div>
                   </div>
