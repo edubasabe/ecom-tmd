@@ -35,7 +35,7 @@
 
 <!-- Btn mobile contacto form -->
 <div class="inicio-tuhogar__icon-contact">
-  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon-contact.svg" alt="Contacto">
+  <a href="https://api.whatsapp.com/send?phone=56966782648"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon-whatsapp.svg" alt="Contacto" height="40" width="40" class="img-responsive" /></a>
 </div>
 
 

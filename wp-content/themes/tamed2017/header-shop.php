@@ -17,58 +17,6 @@
     <?php wp_head(); ?>
   </head>
     <body  <?php body_class(); ?> id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-<style media="screen">
-/*.navbar-header {
-  position: relative;
-}
-  .comprar-bag {
-    position: absolute;
-    right: 70px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .comprar-bag form {
-    float: left;
-    padding: 1rem;
-  }
-
-
-  .bag-tamed {
-      display: inline;
-  }
-
-  #searchform .form-group {
-      position: relative;
-  }
-
-  #searchform button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 0 4px 4px 0px;
-    background-color: white;
-  }
-
-  .sub-nav-mobile {
-
-  }
-  .sub-nav-mobile .col-xs-2,
-  .sub-nav-mobile .col-xs-10 {
-    padding: 0;
-  }
-
-  .sub-nav-mobile .col-xs-2 {
-    min-height: 34px;
-  }
-
-  .sub-nav-mobile .col-xs-2 img {
-    min-height: 34px;
-    transform: scale(1.3);
-  }
-*/
-
-</style>
       <!-- Navigation -->
       <nav class="navbar navbar-default navbar-fixed-top bg-white header-shop" role="navigation" id="nav">
               <div class="container">
@@ -499,11 +447,7 @@
                                   </li>
                               <?php } */?>
                             <li class="level-1">
-                              <a class="page-scroll tienda-link" href="<?php echo get_page_link(9); ?>" >Tienda en línea &nbsp;&nbsp; <?php if ( wp_is_mobile() ) {
-                            echo '<img src="' . get_template_directory_uri() . '/assets/images/icon/bag-icon-white.svg" width="20" alt="Cart" class="cart-icon">';
-                          } else {
-                            echo '<img src="' . get_template_directory_uri() . '/assets/images/icon/bag-icon.svg" width="20" alt="Cart" class="cart-icon">';
-                          } ?></a></li>
+                              <a class="page-scroll tienda-link" href="<?php echo get_page_link(9); ?>" >Tienda en línea</a></li>
                             <li class="level-1"><a href="#">
 
 

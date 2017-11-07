@@ -20,7 +20,7 @@
      </video>
      <div class="inicio-tuhogar--homevideo__title">
        <h2 class="text-center text-color-white">Tu Hogar Inteligente</h2>
-       <p class="lead text-center text-color-white">Automatizamos tu casa con el sistema domótico líder en el mundo: FIBARO.</p>
+       <p class="lead text-center text-color-white">Transforma tu casa en una Smart Home con el sistema domótico líder en el mundo: FIBARO.</p>
        <br>
        <p class="text-center"><a href="#" class="button button-play" id="play-promo-video"><span>Play</span></a></p>
      </div>
@@ -123,9 +123,9 @@
      </div>
      <div class="row">
        <div class="col-xs-12">
-         <br>
+         <br><br>
          <!-- <h2 class="headline headline--nomargin inicio-tuhogar__smarthome--title">¿POR QUÉ FIBARO?</h2> -->
-         <p class="lead text-center"><a href="<?php echo get_page_link(30493); ?>" class="link link--arrow">Explora el sistema</a></p>
+         <p class="lead text-center"><a href="<?php echo get_page_link(30493); ?>" class="btn btn-lg btn-fibaro">Conoce el sistema</a></p>
        </div>
      </div>
      <!-- <div class="row">
@@ -195,7 +195,7 @@
    <div class="row">
      <div class="col-sm-12">
        <h2 class="headline headline--nomargin inicio-tuhogar__smarthome--title">Comienza tu experiencia Smart aquí</h2>
-       <p class="lead inicio-tuhogar__smarthome--subtitle">Tu punto de partida.</p>
+       <!-- <p class="lead inicio-tuhogar__smarthome--subtitle">Tu punto de partida.</p> -->
      </div>
    </div>
    <div class="row">
@@ -209,15 +209,15 @@
          </div>
          <br>
          <p class="btn-container text-center center-block">
-           <a href="https://tuhogarinteligente.cl/comprar" class="btn btn-fibaro">Tienda en línea</a></p>
+           <a href="#experience-center" class="btn btn-fibaro page-scroll">Centro de proyectos</a></p>
        </div>
        <div class="col-xs-6">
-         <div class="icon" style="min-height: 8rem; padding: 2.95rem;">
+         <div class="icon" >
 
-           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/support-icon.png" width="50" alt="Support" class="img-responsive center-block">
+           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon-phonecall-white.svg" width="65" alt="Support" class="img-responsive center-block" style="margin: 3.7rem auto;" />
          </div>
          <p class="btn-container text-center center-block">
-           <a href="tel:+56228486547" class="btn btn-fibaro" id="consulta-experto">Consulta un experto</a>
+           <a href="tel:+56228409981" class="btn btn-fibaro" id="consulta-experto">Consulta un experto</a>
            <!-- <a href="https://soporte.tuhogarinteligente.cl/" class="btn btn-block btn-lg btn-fibaro">Nuestros Servicios</a> -->
          </p>
        </div>
@@ -233,10 +233,11 @@
  <section class="inicio-tuhogar__experience-center" id="experience-center">
    <div class="container">
      <div class="row">
-        <div class="col-xs-12 page-section--small">
+        <div class="col-xs-12 page-section--small" style="padding-bottom:0;">
           <div class="text-center">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/frase.svg" style="max-height:2rem;"  height="20" alt="Ven a conocer nuestro" class="img-responsive center-block" />
             <h2 class="headline headline--nomargin inicio-tuhogar__experience-center__title">Experience Center</h2>
+            <p class="lead text-center">Para transformar juntos tu proyecto en inteligente</p>
           </div>
           <p class="inicio-tuhogar__experience-center__horario text-center">Lunes a Viernes: 9:00 – 19:00 hrs. | Sábado: 10:00 – 19:00 hrs.</p>
         </div>
@@ -245,7 +246,7 @@
 
    <div class="container-fluid">
      <div class="row">
-       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/background/experience-center.jpg" alt="Experience Center" class="img-responsive ">
+       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/background/experience-center.jpg" alt="Experience Center"  class="img-responsive ">
      </div>
    </div>
 
@@ -295,8 +296,8 @@
    <div class="container">
      <div class="row">
        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-         <h2 class="headline headline--nomargin text-center">Descubre los proyectos que ya son inteligentes en Chile</h2>
-         <p class="lead headline--subheadline">Proyectos Inmobiliarios <i>Smart</i></p>
+         <h2 class="headline headline--nomargin text-center">Sorpréndete con nuestros proyectos inteligentes</h2>
+         <p class="lead headline--subheadline"> Inmobiliarias <i>Smart</i></p>
        </div>
      </div>
      <div class="row">
@@ -380,7 +381,7 @@
      <div class="row">
        <div class="col-sm-12">
          <h2 class="headline headline--nomargin text-center">Compatibilidad</h2>
-         <p class="lead headline--subheadline">Importantes marcas se pueden conectar al sistema FIBARO</p>
+         <p class="lead headline--subheadline">Todo está conectado - Descubre todo lo que puedes conectar al ecosistema FIBARO</p>
        </div>
      </div>
      <div class="row">
@@ -415,6 +416,12 @@
              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partners/dlink.jpg" alt="Dlink" class="img-responsive center-block">
            </p>
          </div>
+
+         <!-- <div class="hidden-xs col-sm-3">
+           <p class="text-center brand-item">
+             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partners/dlink.jpg" alt="Dlink" class="img-responsive center-block">
+           </p>
+         </div> -->
        </div>
      </div>
      <div class="row">

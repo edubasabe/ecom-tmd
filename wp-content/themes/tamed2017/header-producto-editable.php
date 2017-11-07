@@ -389,9 +389,10 @@
                             </li>
 
                             <li class="level-1"><a class="page-scroll" href="http://soporte.tuhogarinteligente.cl/" >Soporte</a></li>
+                            <li class="level-1"><a class="page-scroll" href="<?php echo get_page_link(7); ?>">Contacto</a></li>
                             <!-- ACF -->
                             <?php $link_producto_ecommerce = get_field('link_producto_ecommerce'); ?>
-                            <li class="level-1"><a class="page-scroll btn btn-comprar" style="padding: 4px; margin-top:12px; margin-bottom: 12px; border: 1px solid #0090FF;" href="<?php echo home_url() .  "/producto/" . $link_producto_ecommerce; ?>">Comprar</a></li>
+                            <!-- <li class="level-1"><a class="page-scroll btn btn-comprar" style="padding: 4px; margin-top:12px; margin-bottom: 12px; border: 1px solid #0090FF;" href="<?php echo home_url() .  "/producto/" . $link_producto_ecommerce; ?>">Comprar</a></li> -->
                         </ul>
                     </div>
                   </div>

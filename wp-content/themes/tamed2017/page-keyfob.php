@@ -164,7 +164,7 @@ $manual = get_field('manual_del_producto');
             </div> -->
 
         </div>
-    </div> -->
+    </div> 
   </div>
 </section>
 

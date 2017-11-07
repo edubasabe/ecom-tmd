@@ -15,8 +15,8 @@
    <div class="container">
      <div class="row">
        <div class="col-xs-10 col-xs-offset-1">
-         <p class="text-center">Es hora de</p>
-         <h2 class="headline headline--nomargin text-center">vivir inteligentemente</h2>
+         <p class="text-center">Es hora de vivir</p>
+         <h2 class="headline headline--nomargin text-center">SMART</h2>
        </div>
      </div>
    </div>

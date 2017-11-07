@@ -62,12 +62,12 @@ function add_theme_scripts() {
   // CSS
   wp_enqueue_style( 'wp-style', get_stylesheet_uri(), array(), '3.9.2', 'all' );
   wp_enqueue_style( 'frameworks', get_template_directory_uri() . '/assets/css/frameworks.min.css', array(), '1.0', 'all' );
-  wp_enqueue_style( 'custom-gulp-style', get_template_directory_uri() . '/assets/css/styles.css', array('frameworks'), '4.8.5', 'all' );
+  wp_enqueue_style( 'custom-gulp-style', get_template_directory_uri() . '/assets/css/styles.css', array('frameworks'), '5.0.4', 'all' );
   // wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/slider.css', array(), '1.1', 'all');
 
   // JS
   wp_enqueue_script('vendors', get_template_directory_uri() . '/assets/js/vendor/vendors.js', array('jquery'), '1.1', true );
-  wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery', 'vendors'), '3.1.3', true );
+  wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery', 'vendors'), '3.1.6', true );
   // wp_enqueue_script('menu', get_template_directory_uri() . '/assets/js/menu.js', array('jquery', 'main'), '1.7', true );
   // wp_enqueue_script('carruseles', get_template_directory_uri() . '/assets/js/carruseles.js', array('jquery', 'main'), false, true );
 }
@@ -138,54 +138,10 @@ add_theme_support( 'wc-product-gallery-slider' );
  * To add WooCommerce registration form custom fields.
  */
 
-function text_domain_woo_reg_form_fields() {
-    ?>
-    <div class="form-group">
-        <!-- <label for="billing_first_name"><?php _e('First name', 'woocommerce'); ?><span class="required">*</span></label> -->
-        <input type="text" class="form-control input-text" name="billing_first_name" placeholder="<?php _e('First name', 'woocommerce'); ?>" id="billing_first_name" value="<?php if (!empty($_POST['billing_first_name'])) esc_attr_e($_POST['billing_first_name']); ?>" />
-    </div>
-    <div class="form-group">
-        <!-- <label for="billing_last_name"><?php _e('Last name', 'woocommerce'); ?><span class="required">*</span></label> -->
-        <input type="text" class="form-control input-text" name="billing_last_name" placeholder="<?php _e('Last name', 'woocommerce'); ?>" id="billing_last_name" value="<?php if (!empty($_POST['billing_last_name'])) esc_attr_e($_POST['billing_last_name']); ?>" />
-    </div>
-    <div class="clear"></div>
-    <?php
-}
+require get_parent_theme_file_path( '/includes/wc_functions/wc_functions.php' );
 
-add_action('woocommerce_register_form_start', 'text_domain_woo_reg_form_fields');
 
-/**
- * To save WooCommerce registration form custom fields.
- */
-function text_domain_woo_save_reg_form_fields($customer_id) {
-    //First name field
-    if (isset($_POST['billing_first_name'])) {
-        update_user_meta($customer_id, 'first_name', sanitize_text_field($_POST['billing_first_name']));
-        update_user_meta($customer_id, 'billing_first_name', sanitize_text_field($_POST['billing_first_name']));
-    }
-    //Last name field
-    if (isset($_POST['billing_last_name'])) {
-        update_user_meta($customer_id, 'last_name', sanitize_text_field($_POST['billing_last_name']));
-        update_user_meta($customer_id, 'billing_last_name', sanitize_text_field($_POST['billing_last_name']));
-    }
-}
 
-add_action('woocommerce_created_customer', 'text_domain_woo_save_reg_form_fields');
-
-//Acortar titulos de los productos woocommerce_page_title
-add_filter( 'the_title', 'shorten_woo_product_title', 10, 2 );
-function shorten_woo_product_title( $title, $id ) {
-  if ( is_shop() && get_post_type( $id ) === 'product' ) {
-    if ( strlen($title) > 22 ) {
-      return substr( $title, 0, 22 ) . '...';
-    } else {
-      return $title;
-    }
-
-  } else {
-    return $title;
-  }
-}
 
 // add to cart link  esconder en el loop
 add_filter('woocommerce_loop_add_to_cart_link', false);
