@@ -17,14 +17,14 @@
      <div class="container-fluid">
        <div class="row hidden-sm hidden-md hidden-lg">
          <div class="col-xs-12">
-           <p class="text-center">Siéntete con libertad</p>
-           <h2 class="headline headline--nomargin text-center"> para contactarnos</h2>
+           <p class="text-center hidden">Contacto</p>
+           <h2 class="headline headline--nomargin text-center">Contacto</h2>
          </div>
        </div>
 
        <div class="row hidden-xs">
          <div class="col-xs-12">
-           <h2 class="headline headline--nomargin text-center">Siéntete con libertad para contactarnos</h2>
+           <h2 class="headline headline--nomargin text-center">Contacto</h2>
          </div>
        </div>
      </div>
@@ -261,6 +261,7 @@
              <li><strong>ZIP Code:</strong> 7591092</li>
              <!-- <li>09:00 - 17:00 UTC-3</li> -->
            </ul>
+           <br><br> 
          </div>
        </div>
      </div>

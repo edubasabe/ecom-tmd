@@ -217,7 +217,7 @@
            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/icon-phonecall-white.svg" width="65" alt="Support" class="img-responsive center-block" style="margin: 3.7rem auto;" />
          </div>
          <p class="btn-container text-center center-block">
-           <a href="tel:+56228409981" class="btn btn-fibaro" id="consulta-experto">Consulta un experto</a>
+           <a href="tel:+56228486547" class="btn btn-fibaro" id="consulta-experto">Consulta un experto</a>
            <!-- <a href="https://soporte.tuhogarinteligente.cl/" class="btn btn-block btn-lg btn-fibaro">Nuestros Servicios</a> -->
          </p>
        </div>

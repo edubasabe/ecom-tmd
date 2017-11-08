@@ -22,3 +22,5 @@ wp-content/themes/twentysixteen
 /readme.html
 /sitemap.xml
 /sitemap.xml.gz
+
+*.ftpconfig

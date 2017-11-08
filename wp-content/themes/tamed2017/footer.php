@@ -99,5 +99,6 @@
     <!-- <script src="<?php bloginfo(stylesheet_directory); ?>/assets/js/main.min.js"></script> -->
 
     <?php wp_footer(); ?>
+    <?php include_once 'includes/tracking.php'; ?>
   </body>
 </html>
